@@ -14,6 +14,7 @@
     <module>sso-picture</module>
     <module>sso-music</module>
     <module>sso-api</module>
+    <module>sso-login</module>
   </modules>
 
 
