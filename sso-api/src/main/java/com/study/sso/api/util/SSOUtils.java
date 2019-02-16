@@ -31,7 +31,7 @@ public class SSOUtils implements Serializable {
     public static boolean checkCookie(HttpServletRequest request) {
         Cookie[] cookies = request.getCookies();
 
-        if (cookies != null || cookies.length > 0) {
+        if (cookies != null && cookies.length > 0) {
 
             for (Cookie cookie : cookies) {
                 if (cookie.getName().equals("ssocookie")

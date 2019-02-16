@@ -30,7 +30,7 @@ public class CookieUtils implements Serializable {
      * @param value
      * @param maxValue
      */
-    public static void setCookie(HttpServletRequest request, HttpServletResponse response, String name, String value, int maxValue) {
+    public static void setCookie(HttpServletResponse response, String name, String value, int maxValue) {
         if (name == null || name.length() == 0) {
             return;
         }

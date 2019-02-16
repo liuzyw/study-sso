@@ -8,6 +8,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 /**
  * Created on 2019-02-12
  *
+ * 127.0.0.1	localhost
+ * 127.0.0.1	study.liu.com
+ * 127.0.0.1	sso.liu.com
+ * 127.0.0.1	sso.server.com
+ * 127.0.0.1    study.zhu.com
+ *
  * @author liuzhaoyuan
  */
 @SpringBootApplication

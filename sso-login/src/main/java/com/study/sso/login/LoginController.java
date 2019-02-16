@@ -51,8 +51,31 @@ public class LoginController implements Serializable {
         boolean login = SSOUtils.isLogin(username, password);
 
         if (login) {
-            CookieUtils.setCookie(request, response, "ssocookie", username, 3000);
-            return "redirect:http://www.baidu.com/";
+            CookieUtils.setCookie(response, "ssocookie", username, 3000, ".liu.com", "/");
+
+//            CookieUtils.setCookie(response, "ssocookie", username, 3000);
+            return "redirect:" + goUrl;
+
+        }
+
+        return "login";
+
+    }
+
+
+    @RequestMapping(value = "/sso/same/login", method = RequestMethod.POST)
+    public String login2(HttpServletRequest request, HttpServletResponse response) {
+
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
+
+        String goUrl = request.getParameter("goUrl");
+
+        boolean login = SSOUtils.isLogin(username, password);
+
+        if (login) {
+            CookieUtils.setCookie(response, "ssocookie", username, 3000, ".liu.com", "/");
+            return "redirect:" + goUrl;
 
         }
 

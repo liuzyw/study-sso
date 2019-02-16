@@ -24,14 +24,23 @@ public class BaseController {
     private static final Logger LOGGER = LoggerFactory.getLogger(BaseController.class);
 
 
-    @RequestMapping("/model/view")
+    @RequestMapping("/model1/view")
     public ModelAndView view() {
         ModelAndView modelAndView = new ModelAndView();
         List<Integer> list = new ArrayList<>();
         list.add(100);
         modelAndView.addObject("myName", "Tom");
         modelAndView.addObject("list", list);
-        modelAndView.setViewName("model");
+        modelAndView.setViewName("apple");
+        return modelAndView;
+    }
+
+    @RequestMapping("/model2/view")
+    public ModelAndView view2() {
+        ModelAndView modelAndView = new ModelAndView();
+
+        modelAndView.addObject("myName", "Tom");
+        modelAndView.setViewName("same-domain");
         return modelAndView;
     }
 
@@ -48,8 +57,7 @@ public class BaseController {
             cookieValue = UUID.randomUUID().toString();
         }
 
-        CookieUtils.setCookie(request, response, cookieName, cookieValue, 3000);
-
+        CookieUtils.setCookie(response, cookieName, cookieValue, 3000);
 
         CookieUtils.getDomainName(request);
 
